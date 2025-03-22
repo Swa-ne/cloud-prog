@@ -9,11 +9,11 @@ sudokuapi =  "https://you-do-sudoku-api.vercel.app/api"
 
 @app.route('/', methods=['GET'])
 def index():
-    responseSoduko = requests.get("https://cloud-prog.onrender.com/generate_sudoku_easy").json()
+    responseSoduko = requests.get("/generate_sudoku_easy").json()
     content = responseSoduko['puzzle']
     solution = responseSoduko['solution']
 
-    responseQuotes = requests.get("https://cloud-prog.onrender.com/today").json()
+    responseQuotes = requests.get("/today").json()
     contentQuotes = responseQuotes['quote']
     author = responseQuotes['author']
     
